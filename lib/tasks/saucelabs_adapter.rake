@@ -1,8 +1,6 @@
-require 'run_utils'
+require 'saucelabs_adapter/run_utils'
 
 namespace :selenium do
-
-#  Rake::Task[:'selenium:server'].clear_actions
   
   desc "Run the selenium remote-control server"
   task :server do
