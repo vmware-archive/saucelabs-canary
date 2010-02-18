@@ -1,0 +1,19 @@
+saucelabs: &saucelabs
+  # URL of Selenium RC server:
+  selenium_server_address: "saucelabs.com"
+  selenium_server_port: "4444"
+  # Saucelabs credentials / Browser to drive
+  saucelabs_username: "YOUR-SAUCELABS-USERNAME"
+  saucelabs_access_key: "YOUR-SAUCELABS-ACCESS-KEY"
+  saucelabs_browser_os: "Linux"
+  saucelabs_browser: "firefox"
+  saucelabs_browser_version: "3."
+  saucelabs_max_duration_seconds: 300
+  # Selenium RC browser connects to and tests the app at this URL:
+  application_address: "this will be ovewritten if tunnel_method == :saucetunnel"
+  application_port: 4000
+  # App host is actually a tunnel that tunnels from <application_address>:<application_port> to localhost:<tunnel_to_localhost_port>
+  tunnel_method: :saucetunnel
+  tunnel_to_localhost_port: 4000 # Warning: must be same as application_port if you are using Webrat
+  tunnel_startup_timeout: 240
+
