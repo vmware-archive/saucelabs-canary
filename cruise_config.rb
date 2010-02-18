@@ -2,6 +2,8 @@
 
 Project.configure do |project|
 
+  FileUtils.ln_sf File.join(project.path, 'selenium.yml'), File.join(project.path, 'work', 'config', 'selenium.yml')
+
   # Send email notifications about broken and fixed builds to email1@your.site, email2@your.site (default: send to nobody)
   # project.email_notifier.emails = ['email1@your.site', 'email2@your.site']
 
