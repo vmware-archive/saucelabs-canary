@@ -3,3 +3,4 @@ log/*.log
 tmp/**/*
 db/*.sqlite3
 .idea
+config/selenium.yml
