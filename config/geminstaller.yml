@@ -5,6 +5,7 @@ gems:
   version: 2.3.5
 - name: saucelabs-adapter
   version: >= 0
+  check_for_upgrade: true
 - name: selenium-client
   version: 1.2.18
 - name: webrat
