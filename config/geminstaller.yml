@@ -11,3 +11,4 @@ gems:
 - name: webrat
   version: 0.6.0
 - name: sqlite3-ruby
+- name: json

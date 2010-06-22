@@ -1,3 +1,10 @@
+local: &local
+  selenium_server_address: "127.0.0.1"
+  selenium_server_port: "4444"
+  selenium_browser_key: "*chrome /Applications/Firefox.app/Contents/MacOS/firefox-bin"
+  application_address: "127.0.0.1"
+  application_port: "4000"
+
 saucelabs: &saucelabs
   # URL of Selenium RC server:
   selenium_server_address: "saucelabs.com"
