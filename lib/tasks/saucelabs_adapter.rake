@@ -18,7 +18,7 @@ namespace :selenium do
 
   desc "Run the selenium remote-control server in the background"
   task :server_bg do
-    system('nohup selenium-rc 2&>1 &')
+    system('nohup selenium-rc 2>&1 &')
   end
 
   desc "Runs Selenium tests locally (selenium server must already be started)"
@@ -48,6 +48,18 @@ namespace :selenium do
     else
       puts "test/selenium/selenium_suite.rb not found, bailing.\nPlease create a script that will run your selenium tests."
       exit 1
+    end
+  end
+
+  namespace :spec do
+    desc "Runs Selenium tests locally (selenium server must already be started)"
+    task :local => [:local_env, :suite]
+
+    desc "Run Selenium tests at saucelabs.com (using configuration 'saucelabs' in config/selenium.yml)"
+    task :sauce => [:sauce_env, :suite]
+
+    task :suite do
+      Rake::Task['spec:integration'].invoke
     end
   end
 end
