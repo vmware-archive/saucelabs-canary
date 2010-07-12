@@ -59,6 +59,7 @@ namespace :selenium do
     task :sauce => [:sauce_env, :suite]
 
     task :suite do
+      require 'saucelabs-adapter'
       Rake::Task['spec:integration'].invoke
     end
   end

@@ -5,6 +5,7 @@ require 'spec'
 require 'spec/rails'
 require "webrat"
 require 'saucelabs_adapter'
+require dir + '/../spec_helper'
 
 Webrat.configure do |config|
   config.mode = :selenium
