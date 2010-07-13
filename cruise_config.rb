@@ -12,7 +12,7 @@ Project.configure do |project|
 
   # Build the project by invoking rake task 'custom'
   ENV['SAUCELABS_JOB_NAME'] = "Saucelabs Canary"
-  project.rake_task = 'selenium:sauce'
+  project.rake_task = 'selenium:ci'
 
   # Build the project by invoking shell script "build_my_app.sh". Keep in mind that when the script is invoked,
   # current working directory is <em>[cruise&nbsp;data]</em>/projects/your_project/work, so if you do not keep build_my_app.sh

@@ -12,21 +12,3 @@ require 'spec/rails'
 # in ./support/ and its subdirectories.
 Dir[File.expand_path(File.join(File.dirname(__FILE__),'support','**','*.rb'))].each {|f| require f}
 
-Spec::Runner.configure do |config|
-  selenium_config = SaucelabsAdapter::SeleniumConfig.new(ENV['SELENIUM_ENV'])
-  if selenium_config.start_tunnel?
-    tunnel = SaucelabsAdapter::Tunnel.factory(selenium_config)
-    tunnel.start_tunnel
-  end
-  
-  at_exit do
-    tunnel.shutdown if tunnel
-  end
-
-
-  config.before do
-    webrat_config = Webrat.configuration
-    selenium_config.configure_webrat(webrat_config)
-  end
-
-end

@@ -10,6 +10,9 @@ namespace :selenium do
 
   # Rake tasks are cumulative, and some old plugins are still defining selenium:server, so clear it.
   Rake::Task[:'selenium:server'].clear_actions if Rake::Task.exists?('selenium:server')
+
+  desc "Run both test/unit and rspec tests, at saucelabs.com"
+  task :ci  => [:sauce, :'spec:sauce']
   
   desc "Run the selenium remote-control server"
   task :server do
