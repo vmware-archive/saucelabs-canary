@@ -12,7 +12,7 @@ Project.configure do |project|
 
   # Build the project by invoking rake task 'custom'
   ENV['SAUCELABS_JOB_NAME'] = "Saucelabs Canary"
-  ENV['IS_CI_BOX'] = true
+  ENV['IS_CI_BOX'] = 'true'
   project.rake_task = 'selenium:ci'
 
   # Build the project by invoking shell script "build_my_app.sh". Keep in mind that when the script is invoked,
