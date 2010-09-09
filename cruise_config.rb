@@ -13,12 +13,12 @@ Project.configure do |project|
   # Build the project by invoking rake task 'custom'
   ENV['SAUCELABS_JOB_NAME'] = "Saucelabs Canary"
   ENV['IS_CI_BOX'] = 'true'
-  project.rake_task = 'selenium:ci'
+  # project.rake_task = 'selenium:ci'
 
   # Build the project by invoking shell script "build_my_app.sh". Keep in mind that when the script is invoked,
   # current working directory is <em>[cruise&nbsp;data]</em>/projects/your_project/work, so if you do not keep build_my_app.sh
   # in version control, it should be '../build_my_app.sh' instead
-  # project.build_command = 'build_my_app.sh'
+  project.build_command = 'rake sauce && rake spec:sauce'
 
   # Ping Subversion for new revisions every 5 minutes (default: 30 seconds)
   # project.scheduler.polling_interval = 5.minutes
