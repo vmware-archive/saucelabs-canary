@@ -14,6 +14,9 @@ namespace :selenium do
   desc "Run both test/unit and rspec tests, at saucelabs.com"
   task :ci  => [:sauce, :'spec:sauce']
   
+  desc "Run both test/unit and rspec tests, locally"
+  task :localci  => [:local, :'spec:local']
+  
   desc "Run the selenium remote-control server"
   task :server do
     system('selenium-rc')
@@ -62,7 +65,6 @@ namespace :selenium do
     task :sauce => [:sauce_env, :suite]
 
     task :suite do
-      require 'saucelabs-adapter'
       Rake::Task['spec:integration'].invoke
     end
   end
