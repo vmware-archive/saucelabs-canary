@@ -3,4 +3,4 @@ source $HOME/.rvm/environments/1.8.7-p299@saucelabs-canary #  have to hardcode e
 source .rvmrc
 export IS_CI_BOX=true
 rvm exec bundle install
-rake $@
+rvm exec rake $@
