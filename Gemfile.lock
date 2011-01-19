@@ -51,11 +51,7 @@ GEM
       rest-client (>= 1.5.0)
       selenium-client (>= 1.2.17)
     selenium-client (1.2.18)
-<<<<<<< HEAD
-    webrat (0.6.0)
-=======
     webrat (0.7.3)
->>>>>>> cleanup and updates, test-unit and rspec working against latest master of saucelabs-adapter
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
