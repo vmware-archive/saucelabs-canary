@@ -13,6 +13,8 @@ namespace :selenium do
 
   desc "Run both test/unit and rspec tests, at saucelabs.com"
   task :ci  => [:'spec:sauce', :'suite'] do
+    # TODO: Fix this, it ain't working.  Also update template rake file
+    # saucelabs-adapter with any changes from here.
     if (File.exist?("sauce_connect.log") && ENV['CC_BUILD_ARTIFACTS'])
       FileUtils.cp("sauce_connect.log", ENV['CC_BUILD_ARTIFACTS'])
     end
