@@ -4,9 +4,11 @@
 require(File.join(File.dirname(__FILE__), 'config', 'boot'))
 
 require 'rake'
+
+task :default => 'selenium:ci' # It would be nice if this actually worked...
+
 require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
 
-task :default => 'selenium:sauce'

@@ -12,7 +12,11 @@ namespace :selenium do
   Rake::Task[:'selenium:server'].clear_actions if Rake::Task.exists?('selenium:server')
 
   desc "Run both test/unit and rspec tests, at saucelabs.com"
-  task :ci  => [:sauce, :'spec:sauce']
+  task :ci  => [:'spec:sauce', :'suite'] do
+    if (File.exist?("sauce_connect.log") && ENV['CC_BUILD_ARTIFACTS'])
+      FileUtils.cp("sauce_connect.log", ENV['CC_BUILD_ARTIFACTS'])
+    end
+  end
   
   desc "Run both test/unit and rspec tests, locally"
   task :localci  => [:local, :'spec:local']
